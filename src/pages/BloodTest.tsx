@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { useBloodTest } from "@/context/BloodTestContext";
 import { mockBiomarkers, type Biomarker } from "@/data/biomarkers";
 import { supplements } from "@/data/supplements";
 import { Button } from "@/components/ui/button";
@@ -16,6 +17,7 @@ type UploadState = "idle" | "uploading" | "analyzing" | "done";
 
 const BloodTest = () => {
   const navigate = useNavigate();
+  const { setHasUploadedBloodTest } = useBloodTest();
   const [state, setState] = useState<UploadState>("idle");
   const [fileName, setFileName] = useState("");
   const [progress, setProgress] = useState(0);
@@ -31,7 +33,10 @@ const BloodTest = () => {
           clearInterval(uploadInterval);
           setState("analyzing");
           // Simulate analysis
-          setTimeout(() => setState("done"), 2500);
+          setTimeout(() => {
+            setState("done");
+            setHasUploadedBloodTest(true);
+          }, 2500);
           return 100;
         }
         return p + 8;

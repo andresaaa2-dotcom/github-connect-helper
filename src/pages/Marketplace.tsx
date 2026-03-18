@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { supplements, categories, type Supplement } from "@/data/supplements";
 import { mockBiomarkers } from "@/data/biomarkers";
 import { useCart } from "@/context/CartContext";
+import { useBloodTest } from "@/context/BloodTestContext";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import {
-  Search, Star, ShoppingCart, ArrowRight, Filter, ChevronDown, ChevronUp,
-  FlaskConical,
+  Search, Star, ShoppingCart, Filter, ChevronDown, ChevronUp,
+  FlaskConical, Lock, Upload,
 } from "lucide-react";
 import { SecurityFooter } from "@/components/TrustBadges";
 
@@ -17,6 +18,7 @@ type SortOption = "featured" | "price-low" | "price-high" | "rating";
 const Marketplace = () => {
   const navigate = useNavigate();
   const { addToCart, items } = useCart();
+  const { hasUploadedBloodTest } = useBloodTest();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
@@ -112,6 +114,8 @@ const Marketplace = () => {
                 onToggle={() => setExpandedProduct(expandedProduct === supp.id ? null : supp.id)}
                 onAdd={() => addToCart(supp.id, "one-time")}
                 inCart={items.some((item) => item.supplementId === supp.id)}
+                hasBloodTest={hasUploadedBloodTest}
+                onUploadClick={() => navigate("/blood-test")}
               />
             ))}
           </div>
@@ -137,6 +141,8 @@ const ProductCard = ({
   onToggle,
   onAdd,
   inCart,
+  hasBloodTest,
+  onUploadClick,
 }: {
   supplement: Supplement;
   isBiomarkerLinked: boolean;
@@ -144,13 +150,17 @@ const ProductCard = ({
   onToggle: () => void;
   onAdd: () => void;
   inCart: boolean;
+  hasBloodTest: boolean;
+  onUploadClick: () => void;
 }) => {
   return (
     <div className={`wellness-card p-5 transition-all ${isBiomarkerLinked ? "ring-2 ring-primary/20 border-primary/30" : ""}`}>
       <div className="flex items-start gap-4">
-        <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${supplement.color}12` }}>
-          <supplement.icon className="h-7 w-7" style={{ color: supplement.color }} />
-        </div>
+        <img
+          src={supplement.image}
+          alt={supplement.name}
+          className="w-20 h-20 rounded-xl object-cover flex-shrink-0 bg-secondary"
+        />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-1">
             <h3 className="font-heading font-semibold text-foreground">{supplement.name}</h3>
@@ -199,9 +209,56 @@ const ProductCard = ({
             <p className="text-xs text-muted-foreground">{supplement.evidence}</p>
           </div>
           <div className="p-3 rounded-xl bg-secondary">
-            <p className="text-xs font-medium text-foreground mb-1">💊 Recommended Dosage</p>
+            <p className="text-xs font-medium text-foreground mb-1">💊 General Dosage</p>
             <p className="text-xs text-muted-foreground">{supplement.dosage}</p>
           </div>
+
+          {/* Personalized Dosage — locked behind blood test */}
+          {supplement.personalizedDosage ? (
+            hasBloodTest ? (
+              <div className="p-3 rounded-xl bg-accent/5 border border-accent/20">
+                <p className="text-xs font-medium text-foreground mb-2 flex items-center gap-1.5">
+                  <FlaskConical className="h-3.5 w-3.5 text-accent" />
+                  Your Personalized Dosage Range
+                </p>
+                <div className="space-y-2">
+                  {supplement.personalizedDosage.map((pd) => (
+                    <div key={pd.status} className="flex items-start gap-2">
+                      <Badge
+                        variant="outline"
+                        className={`text-[10px] mt-0.5 flex-shrink-0 ${
+                          pd.status === "low"
+                            ? "border-warning text-warning"
+                            : pd.status === "high"
+                            ? "border-destructive text-destructive"
+                            : "border-accent text-accent"
+                        }`}
+                      >
+                        {pd.status.toUpperCase()}
+                      </Badge>
+                      <div>
+                        <p className="text-xs font-medium text-foreground">{pd.range}</p>
+                        <p className="text-[11px] text-muted-foreground">{pd.note}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="p-4 rounded-xl bg-muted/50 border border-border text-center">
+                <Lock className="h-5 w-5 text-muted-foreground mx-auto mb-2" />
+                <p className="text-xs font-medium text-foreground mb-1">Personalized Dosage Locked</p>
+                <p className="text-[11px] text-muted-foreground mb-3">
+                  Upload your blood test to unlock dosage recommendations tailored to your biomarkers.
+                </p>
+                <Button size="sm" variant="outline" className="rounded-lg text-xs" onClick={onUploadClick}>
+                  <Upload className="h-3 w-3 mr-1" />
+                  Upload Blood Test
+                </Button>
+              </div>
+            )
+          ) : null}
+
           {supplement.recommendedFor && (
             <div className="flex flex-wrap gap-1.5">
               {supplement.recommendedFor.map((tag) => (
