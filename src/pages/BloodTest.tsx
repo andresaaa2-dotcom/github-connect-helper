@@ -129,7 +129,7 @@ const BloodTest = () => {
                   </Button>
                 </div>
               </div>
-
+            </div>
           )}
 
           {state === "uploading" && (
