@@ -1,4 +1,3 @@
-import { Shield, Lock, FileCheck, Eye } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -6,30 +5,35 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+import badgeIso27001 from "@/assets/badge-iso27001.png";
+import badgeIso27701 from "@/assets/badge-iso27701.png";
+import badgeGdpr from "@/assets/badge-gdpr.png";
+import badgeE2e from "@/assets/badge-e2e.png";
+
 const badges = [
   {
-    icon: Shield,
+    image: badgeIso27001,
     label: "ISO 27001",
     subtitle: "Information Security",
     tooltip:
       "ISO 27001 Certified – Your health data is protected by internationally recognized information security management standards. Data encrypted in transit and at rest.",
   },
   {
-    icon: Lock,
+    image: badgeIso27701,
     label: "ISO 27701",
     subtitle: "Privacy Management",
     tooltip:
       "ISO 27701 Certified – Privacy information management ensures your personal health data is handled according to the highest privacy standards. You can delete your data at any time.",
   },
   {
-    icon: FileCheck,
+    image: badgeGdpr,
     label: "GDPR",
     subtitle: "Compliant",
     tooltip:
       "Fully GDPR compliant – Your data is stored securely within European regulations. Personal data is never sold or shared without your explicit consent.",
   },
   {
-    icon: Eye,
+    image: badgeE2e,
     label: "E2E Encrypted",
     subtitle: "Health Data",
     tooltip:
@@ -40,15 +44,17 @@ const badges = [
 export const TrustBadges = ({ className = "" }: { className?: string }) => {
   return (
     <TooltipProvider delayDuration={200}>
-      <div className={`flex flex-wrap items-center justify-center gap-3 ${className}`}>
+      <div className={`flex flex-wrap items-center justify-center gap-6 ${className}`}>
         {badges.map((badge) => (
           <Tooltip key={badge.label}>
             <TooltipTrigger asChild>
-              <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-border bg-secondary/50 hover:bg-secondary transition-colors cursor-help">
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <badge.icon className="h-4 w-4 text-primary" />
-                </div>
-                <div className="text-left">
+              <div className="flex flex-col items-center gap-2 cursor-help group">
+                <img
+                  src={badge.image}
+                  alt={`${badge.label} ${badge.subtitle} certification badge`}
+                  className="w-16 h-16 object-contain group-hover:scale-105 transition-transform"
+                />
+                <div className="text-center">
                   <p className="text-xs font-heading font-semibold text-foreground leading-tight">
                     {badge.label}
                   </p>
