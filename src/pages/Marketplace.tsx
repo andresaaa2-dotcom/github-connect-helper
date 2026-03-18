@@ -58,8 +58,8 @@ const Marketplace = () => {
       <div className="pt-24 pb-16 section-padding">
         <div className="container max-w-6xl">
           <div className="mb-8 animate-fade-in">
-            <h1 className="font-heading text-3xl md:text-4xl text-foreground font-bold tracking-tight mb-2">Supplement Marketplace</h1>
-            <p className="text-muted-foreground text-lg">Evidence-based supplements. Personalized to your biomarkers.</p>
+            <h1 className="font-heading text-3xl md:text-4xl text-foreground font-bold tracking-tight mb-2">Only what you actually need</h1>
+            <p className="text-muted-foreground text-lg">Cut through the supplement noise — every product here is matched to real biomarker data.</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-6">

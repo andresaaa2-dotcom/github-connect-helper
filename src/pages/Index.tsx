@@ -23,10 +23,10 @@ const Index = () => {
                 Data-Driven Health Optimization
               </div>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] text-foreground leading-[1.1] font-bold mb-6 tracking-tight">
-                Optimize your health using your own data.
+                Stop guessing your supplements. Start using your data.
               </h1>
               <p className="text-lg text-muted-foreground mb-10 max-w-lg leading-relaxed">
-                Upload your blood tests, connect your wearables, and receive personalized supplement recommendations powered by AI.
+                Turn your blood tests and wearable data into a personalized health strategy — so you feel better, perform better, and make smarter decisions about your body.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="text-base px-8 py-6 rounded-xl font-medium" onClick={() => navigate("/blood-test")}>
@@ -70,9 +70,9 @@ const Index = () => {
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Shield, label: "Clinically Validated", desc: "All recommendations based on peer-reviewed research" },
-              { icon: FlaskConical, label: "Biomarker-Driven", desc: "Personalized to your unique biochemistry" },
-              { icon: Users, label: "12,000+ Users", desc: "Trusted by athletes and health optimizers" },
+              { icon: Shield, label: "No More Guesswork", desc: "Know exactly what you need based on your own biology" },
+              { icon: FlaskConical, label: "Science, Not Hype", desc: "Every recommendation backed by peer-reviewed research" },
+              { icon: Users, label: "12,000+ Optimizers", desc: "Athletes and professionals who perform at their best" },
             ].map((item, i) => (
               <div key={item.label} className="flex items-start gap-4 animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -93,13 +93,13 @@ const Index = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-4 tracking-tight">How It Works</h2>
-            <p className="text-muted-foreground text-lg max-w-lg mx-auto">From raw data to actionable supplement recommendations in minutes.</p>
+            <p className="text-muted-foreground text-lg max-w-lg mx-auto">From blood test to personalized health strategy in minutes — no more guesswork.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { step: "01", title: "Upload Your Data", desc: "Upload blood tests or connect wearables like WHOOP, Oura, or Apple Health.", icon: Upload },
-              { step: "02", title: "AI Analysis", desc: "Our engine analyzes biomarkers, sleep, training load, and recovery patterns.", icon: Brain },
-              { step: "03", title: "Get Your Protocol", desc: "Receive evidence-based supplement recommendations linked to your biomarkers.", icon: Zap },
+              { step: "01", title: "Share Your Data", desc: "Upload a blood test or connect your wearable — we handle the rest.", icon: Upload },
+              { step: "02", title: "Discover What You Need", desc: "See exactly which nutrients your body is missing and why it matters for your performance.", icon: Brain },
+              { step: "03", title: "Feel the Difference", desc: "Get a science-backed supplement plan tailored to your body — train harder, recover faster, think clearer.", icon: Zap },
             ].map((item, i) => (
               <div key={item.step} className="wellness-card p-8 text-center animate-fade-in" style={{ animationDelay: `${i * 0.15}s` }}>
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
@@ -120,10 +120,10 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-6 tracking-tight">
-                Your blood tells the story.
+                Use your data to stay healthy, not just treat problems.
               </h2>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Upload your blood test results and instantly see which biomarkers need attention. Our system maps deficiencies to specific supplements with dosage guidance.
+                Detect nutrient deficiencies early, optimize your metabolic health, and build a supplement protocol that keeps you ahead — not catching up.
               </p>
               <ul className="space-y-3 mb-8">
                 {["Vitamin D, B12, Iron, Ferritin", "Testosterone, Cortisol, Thyroid", "Cholesterol, Omega-3 Index", "Fasting Glucose, HbA1c"].map(item => (
@@ -146,9 +146,9 @@ const Index = () => {
       {/* Wearable Integrations */}
       <section className="section-padding">
         <div className="container text-center">
-          <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-4 tracking-tight">Connect Your Wearables</h2>
+          <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-4 tracking-tight">Train Harder. Recover Faster. Perform at Your Best.</h2>
           <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-12">
-            Sync data from your favorite health devices for a complete optimization picture.
+            Connect your wearable to unlock recovery, sleep, and training insights that shape your supplement protocol.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-3xl mx-auto">
             {["Apple Health", "WHOOP", "Oura Ring", "Garmin", "Strava"].map((name, i) => (
@@ -166,10 +166,10 @@ const Index = () => {
       <section className="section-padding bg-foreground">
         <div className="container text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-primary-foreground font-bold mb-4 tracking-tight">
-            Start optimizing today.
+            Cut through the supplement noise with science.
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-md mx-auto mb-8">
-            Take the health quiz or upload your blood test to get personalized recommendations.
+            Know exactly what your body needs, what you can skip, and how much to take — backed by your own biology.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" className="rounded-xl text-base px-8 py-6" onClick={() => navigate("/quiz")}>
