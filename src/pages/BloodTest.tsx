@@ -10,7 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import Navbar from "@/components/Navbar";
 import {
   Upload, FileText, CheckCircle2, AlertCircle, ArrowRight,
-  Zap, Activity, X, Loader2, ClipboardList, Check,
+  Zap, Activity, X, Loader2,
 } from "lucide-react";
 import { TrustBadges } from "@/components/TrustBadges";
 
@@ -18,10 +18,11 @@ type UploadState = "idle" | "uploading" | "analyzing" | "done";
 
 const BloodTest = () => {
   const navigate = useNavigate();
-  const { setHasUploadedBloodTest } = useBloodTest();
+  const { hasUploadedBloodTest, setHasUploadedBloodTest } = useBloodTest();
   const { answers, isComplete: quizComplete } = useQuiz();
-  const [state, setState] = useState<UploadState>("idle");
-  const [fileName, setFileName] = useState("");
+  const initialState: UploadState = hasUploadedBloodTest && quizComplete ? "done" : "idle";
+  const [state, setState] = useState<UploadState>(initialState);
+  const [fileName, setFileName] = useState(hasUploadedBloodTest ? "sample-blood-test.pdf" : "");
   const [progress, setProgress] = useState(0);
 
   const simulateUpload = useCallback((name: string) => {
@@ -36,8 +37,12 @@ const BloodTest = () => {
           setState("analyzing");
           // Simulate analysis
           setTimeout(() => {
-            setState("done");
             setHasUploadedBloodTest(true);
+            if (!quizComplete) {
+              navigate("/quiz?from=blood-test");
+            } else {
+              setState("done");
+            }
           }, 2500);
           return 100;
         }
@@ -123,67 +128,6 @@ const BloodTest = () => {
                     Use Sample Report
                   </Button>
                 </div>
-              </div>
-
-              {/* Health Profile Quiz Section */}
-              <div className="wellness-card p-8 text-center">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <ClipboardList className="h-6 w-6 text-primary" />
-                  </div>
-                  <h2 className="font-heading text-xl text-foreground font-semibold text-left">
-                    Complete Your Health Profile
-                  </h2>
-                </div>
-                <p className="text-muted-foreground text-sm mb-6 max-w-lg mx-auto">
-                  Answer a short quiz about your health goals, lifestyle, and current supplements. 
-                  This data enhances your blood test analysis with more personalized and accurate recommendations.
-                </p>
-
-                {quizComplete ? (
-                  <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium">
-                      <Check className="h-4 w-4" />
-                      Health profile completed
-                    </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-lg mx-auto text-left">
-                      <div className="wellness-card p-3">
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Age</p>
-                        <p className="font-heading font-semibold text-foreground text-sm">{answers.age || "—"}</p>
-                      </div>
-                      <div className="wellness-card p-3">
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Exercise</p>
-                        <p className="font-heading font-semibold text-foreground text-sm">{answers.exercise || "—"}</p>
-                      </div>
-                      <div className="wellness-card p-3">
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Diet</p>
-                        <p className="font-heading font-semibold text-foreground text-sm">{answers.diet || "—"}</p>
-                      </div>
-                      <div className="wellness-card p-3">
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Supplements</p>
-                        <p className="font-heading font-semibold text-foreground text-sm">{answers.takesSupplements || "—"}</p>
-                      </div>
-                    </div>
-                    <Button variant="outline" size="sm" className="rounded-lg" onClick={() => navigate("/quiz")}>
-                      Retake Quiz
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap justify-center gap-2 text-xs text-muted-foreground">
-                      <span className="px-3 py-1 rounded-full bg-muted">🎯 Health goals</span>
-                      <span className="px-3 py-1 rounded-full bg-muted">🏃 Lifestyle</span>
-                      <span className="px-3 py-1 rounded-full bg-muted">💊 Current supplements</span>
-                      <span className="px-3 py-1 rounded-full bg-muted">🍽️ Diet quality</span>
-                    </div>
-                    <Button className="rounded-xl" onClick={() => navigate("/quiz")}>
-                      <ClipboardList className="h-4 w-4 mr-2" />
-                      Take the Health Quiz
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                    <p className="text-xs text-muted-foreground">Takes ~2 minutes · Improves report accuracy</p>
-                  </div>
-                )}
               </div>
             </div>
           )}
