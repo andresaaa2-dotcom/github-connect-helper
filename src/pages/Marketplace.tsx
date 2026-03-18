@@ -15,7 +15,7 @@ type SortOption = "featured" | "price-low" | "price-high" | "rating";
 
 const Marketplace = () => {
   const navigate = useNavigate();
-  const { addItem, items } = useCart();
+  const { addToCart, items } = useCart();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
