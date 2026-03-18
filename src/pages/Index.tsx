@@ -70,9 +70,9 @@ const Index = () => {
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Shield, label: "Clinically Validated", desc: "All recommendations based on peer-reviewed research" },
-              { icon: FlaskConical, label: "Biomarker-Driven", desc: "Personalized to your unique biochemistry" },
-              { icon: Users, label: "12,000+ Users", desc: "Trusted by athletes and health optimizers" },
+              { icon: Shield, label: "No More Guesswork", desc: "Know exactly what you need based on your own biology" },
+              { icon: FlaskConical, label: "Science, Not Hype", desc: "Every recommendation backed by peer-reviewed research" },
+              { icon: Users, label: "12,000+ Optimizers", desc: "Athletes and professionals who perform at their best" },
             ].map((item, i) => (
               <div key={item.label} className="flex items-start gap-4 animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">

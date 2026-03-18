@@ -73,10 +73,10 @@ const BloodTest = () => {
         <div className="container max-w-4xl">
           <div className="mb-10 animate-fade-in">
             <h1 className="font-heading text-3xl md:text-4xl text-foreground font-bold tracking-tight mb-2">
-              Blood Test Analysis
+              Turn your blood work into a health strategy
             </h1>
             <p className="text-muted-foreground text-lg">
-              Upload your blood test report and get instant biomarker analysis with personalized supplement recommendations.
+              See exactly what your body needs — and what you can skip — based on your own biomarkers.
             </p>
           </div>
 

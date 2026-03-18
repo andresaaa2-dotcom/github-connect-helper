@@ -65,8 +65,8 @@ const Dashboard = () => {
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 animate-fade-in">
             <div>
-              <h1 className="font-heading text-3xl md:text-4xl text-foreground font-bold tracking-tight mb-1">Health Dashboard</h1>
-              <p className="text-muted-foreground">Your biomarker overview and optimization recommendations.</p>
+              <h1 className="font-heading text-3xl md:text-4xl text-foreground font-bold tracking-tight mb-1">Your Health Strategy</h1>
+              <p className="text-muted-foreground">See what your body needs to perform, recover, and feel its best.</p>
             </div>
             <Button className="mt-4 md:mt-0 rounded-xl" onClick={() => navigate("/blood-test")}>
               <Upload className="h-4 w-4 mr-2" />
