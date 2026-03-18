@@ -173,6 +173,8 @@ const Index = () => {
 
       {/* Security Footer */}
       <SecurityFooter />
+
+      <BookBloodTestModal open={bookingOpen} onOpenChange={setBookingOpen} />
     </div>
   );
 };

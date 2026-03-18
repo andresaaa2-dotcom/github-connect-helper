@@ -230,6 +230,7 @@ const Dashboard = () => {
       </div>
 
       <SecurityFooter />
+      <BookBloodTestModal open={bookingOpen} onOpenChange={setBookingOpen} />
     </div>
   );
 };
