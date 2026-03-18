@@ -124,6 +124,8 @@ const Marketplace = () => {
           )}
         </div>
       </div>
+
+      <SecurityFooter />
     </div>
   );
 };
