@@ -42,6 +42,7 @@ const MiniChart = ({ data }: { data: number[] }) => {
 const Dashboard = () => {
   const navigate = useNavigate();
   const [biomarkerFilter, setBiomarkerFilter] = useState("all");
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   const filteredBiomarkers = biomarkerFilter === "all"
     ? mockBiomarkers
