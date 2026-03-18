@@ -10,6 +10,7 @@ import {
   Activity, TrendingUp, TrendingDown, Minus, ArrowRight, ShoppingCart,
   AlertCircle, CheckCircle2, Upload, Heart, Brain, Shield, Zap, Moon,
 } from "lucide-react";
+import { SecurityFooter } from "@/components/TrustBadges";
 
 const statusConfig: Record<BiomarkerStatus, { label: string; className: string; icon: typeof CheckCircle2 }> = {
   optimal: { label: "Optimal", className: "biomarker-optimal", icon: CheckCircle2 },
@@ -245,6 +246,8 @@ const Dashboard = () => {
           )}
         </div>
       </div>
+
+      <SecurityFooter />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import {
   Search, Star, ShoppingCart, ArrowRight, Filter, ChevronDown, ChevronUp,
   FlaskConical,
 } from "lucide-react";
+import { SecurityFooter } from "@/components/TrustBadges";
 
 type SortOption = "featured" | "price-low" | "price-high" | "rating";
 
@@ -123,6 +124,8 @@ const Marketplace = () => {
           )}
         </div>
       </div>
+
+      <SecurityFooter />
     </div>
   );
 };

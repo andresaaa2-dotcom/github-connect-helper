@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Activity, Upload, Watch, Shield, FlaskConical, Users, TrendingUp, Brain, Heart, Zap } from "lucide-react";
+import { SecurityFooter, TrustBadges } from "@/components/TrustBadges";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import dashboardPreview from "@/assets/dashboard-preview.jpg";
@@ -182,13 +183,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="section-padding border-t border-border">
-        <div className="container text-center">
-          <p className="font-heading text-xl font-bold text-foreground mb-2">biostack</p>
-          <p className="text-sm text-muted-foreground">Data-driven health optimization.</p>
-        </div>
-      </footer>
+      {/* Security Footer */}
+      <SecurityFooter />
     </div>
   );
 };
