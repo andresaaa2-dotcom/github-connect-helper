@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBloodTest } from "@/context/BloodTestContext";
+import { useQuiz } from "@/context/QuizContext";
 import { mockBiomarkers, type Biomarker } from "@/data/biomarkers";
 import { supplements } from "@/data/supplements";
 import { Button } from "@/components/ui/button";
