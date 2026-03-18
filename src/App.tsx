@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QuizProvider } from "@/context/QuizContext";
+import { BloodTestProvider } from "@/context/BloodTestContext";
 import { CartProvider } from "@/context/CartContext";
 import Index from "./pages/Index";
 import Quiz from "./pages/Quiz";
