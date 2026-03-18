@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import {
   Search, Star, ShoppingCart, ArrowRight, Filter, ChevronDown, ChevronUp,
-  FlaskConical, Beaker,
+  FlaskConical,
 } from "lucide-react";
 
 type SortOption = "featured" | "price-low" | "price-high" | "rating";

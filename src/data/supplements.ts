@@ -251,7 +251,7 @@ export const supplements: Supplement[] = [
     benefit: "Blood sugar & metabolic health",
     description: "Plant compound that rivals metformin for glucose control. Activates AMPK, the body's metabolic master switch.",
     price: 22,
-    icon: Beaker,
+    icon: FlaskConical,
     category: "longevity",
     color: "hsl(50, 70%, 45%)",
     rating: 4.7,
