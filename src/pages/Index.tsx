@@ -183,13 +183,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="section-padding border-t border-border">
-        <div className="container text-center">
-          <p className="font-heading text-xl font-bold text-foreground mb-2">biostack</p>
-          <p className="text-sm text-muted-foreground">Data-driven health optimization.</p>
-        </div>
-      </footer>
+      {/* Security Footer */}
+      <SecurityFooter />
     </div>
   );
 };

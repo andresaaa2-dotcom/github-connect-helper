@@ -108,6 +108,7 @@ const BloodTest = () => {
                 </Button>
               </label>
               <p className="text-xs text-muted-foreground mt-4">Supported: PDF, JPG, PNG · Max 20 MB</p>
+              <TrustBadges className="mt-6" />
               <div className="mt-8 flex flex-col items-center gap-2">
                 <p className="text-xs text-muted-foreground font-medium">Or try with sample data</p>
                 <Button variant="outline" size="sm" className="rounded-lg" onClick={() => simulateUpload("sample-blood-test.pdf")}>

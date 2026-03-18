@@ -246,6 +246,8 @@ const Dashboard = () => {
           )}
         </div>
       </div>
+
+      <SecurityFooter />
     </div>
   );
 };

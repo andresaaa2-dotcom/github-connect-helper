@@ -160,6 +160,7 @@ const Checkout = () => {
                 <Lock className="mr-2 h-4 w-4" />
                 Complete Order · €{cartTotal}
               </Button>
+              <TrustBadges className="mt-6" />
             </div>
           )}
 
