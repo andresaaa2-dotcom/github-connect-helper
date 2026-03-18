@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Activity, Upload, Watch, Shield, FlaskConical, Users, TrendingUp, Brain, Heart, Zap } from "lucide-react";
+import { SecurityFooter, TrustBadges } from "@/components/TrustBadges";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import dashboardPreview from "@/assets/dashboard-preview.jpg";
