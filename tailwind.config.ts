@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["DM Serif Display", "serif"],
-        body: ["DM Sans", "sans-serif"],
+        heading: ["Sora", "sans-serif"],
+        body: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -42,6 +42,14 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        optimal: {
+          DEFAULT: "hsl(var(--optimal))",
+          foreground: "hsl(var(--optimal-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -110,6 +118,10 @@ export default {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
+        "count-up": {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -120,6 +132,7 @@ export default {
         "slide-up": "slide-up 0.6s ease-out forwards",
         "pulse-gentle": "pulse-gentle 2s ease-in-out infinite",
         "progress-fill": "progress-fill 2.5s ease-in-out",
+        "count-up": "count-up 0.4s ease-out forwards",
       },
     },
   },

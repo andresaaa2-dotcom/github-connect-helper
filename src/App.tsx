@@ -11,6 +11,7 @@ import Recommendation from "./pages/Recommendation";
 import Customize from "./pages/Customize";
 import Marketplace from "./pages/Marketplace";
 import Dashboard from "./pages/Dashboard";
+import BloodTest from "./pages/BloodTest";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/customize" element={<Customize />} />
               <Route path="/marketplace" element={<Marketplace />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/blood-test" element={<BloodTest />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<NotFound />} />
