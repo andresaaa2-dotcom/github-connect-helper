@@ -101,32 +101,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Wearable Metrics */}
-          <div className="mb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <h2 className="font-heading text-xl text-foreground font-semibold mb-4 flex items-center gap-2">
-              <Activity className="h-5 w-5 text-primary" />
-              Wearable Metrics
-              <Badge variant="secondary" className="text-xs ml-2">7-day avg</Badge>
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-              {mockWearableData.map((metric, i) => (
-                <div key={metric.id} className="wellness-card p-4 animate-fade-in" style={{ animationDelay: `${0.4 + i * 0.05}s` }}>
-                  <div className="flex items-center justify-between mb-1">
-                    <p className="text-xs text-muted-foreground font-medium">{metric.name}</p>
-                    {trendIcon(metric.trend)}
-                  </div>
-                  <p className="font-heading text-2xl font-bold text-foreground">
-                    {metric.value.toLocaleString()}
-                    <span className="text-xs text-muted-foreground font-body ml-1">{metric.unit}</span>
-                  </p>
-                  <MiniChart data={metric.history} />
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {metric.trend === "up" ? "+" : metric.trend === "down" ? "-" : "±"}{metric.trendPercent}% vs last week
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Biomarker Panel */}
           <div className="mb-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
