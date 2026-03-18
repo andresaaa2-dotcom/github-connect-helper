@@ -18,8 +18,8 @@ type UploadState = "idle" | "uploading" | "analyzing" | "done";
 
 const BloodTest = () => {
   const navigate = useNavigate();
-  const { setHasUploadedBloodTest } = useBloodTest();
-  const { isComplete: quizComplete } = useQuiz();
+  const { hasUploadedBloodTest, setHasUploadedBloodTest } = useBloodTest();
+  const { answers, isComplete: quizComplete } = useQuiz();
   const initialState: UploadState = hasUploadedBloodTest && quizComplete ? "done" : "idle";
   const [state, setState] = useState<UploadState>(initialState);
   const [fileName, setFileName] = useState(hasUploadedBloodTest ? "sample-blood-test.pdf" : "");
