@@ -97,9 +97,9 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { step: "01", title: "Upload Your Data", desc: "Upload blood tests or connect wearables like WHOOP, Oura, or Apple Health.", icon: Upload },
-              { step: "02", title: "AI Analysis", desc: "Our engine analyzes biomarkers, sleep, training load, and recovery patterns.", icon: Brain },
-              { step: "03", title: "Get Your Protocol", desc: "Receive evidence-based supplement recommendations linked to your biomarkers.", icon: Zap },
+              { step: "01", title: "Share Your Data", desc: "Upload a blood test or connect your wearable — we handle the rest.", icon: Upload },
+              { step: "02", title: "Discover What You Need", desc: "See exactly which nutrients your body is missing and why it matters for your performance.", icon: Brain },
+              { step: "03", title: "Feel the Difference", desc: "Get a science-backed supplement plan tailored to your body — train harder, recover faster, think clearer.", icon: Zap },
             ].map((item, i) => (
               <div key={item.step} className="wellness-card p-8 text-center animate-fade-in" style={{ animationDelay: `${i * 0.15}s` }}>
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
