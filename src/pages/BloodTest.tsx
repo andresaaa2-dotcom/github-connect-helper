@@ -32,7 +32,10 @@ const BloodTest = () => {
           clearInterval(uploadInterval);
           setState("analyzing");
           // Simulate analysis
-          setTimeout(() => setState("done"), 2500);
+          setTimeout(() => {
+            setState("done");
+            setHasUploadedBloodTest(true);
+          }, 2500);
           return 100;
         }
         return p + 8;
