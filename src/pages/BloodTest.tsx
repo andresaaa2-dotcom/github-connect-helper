@@ -37,8 +37,12 @@ const BloodTest = () => {
           setState("analyzing");
           // Simulate analysis
           setTimeout(() => {
-            setState("done");
             setHasUploadedBloodTest(true);
+            if (!quizComplete) {
+              navigate("/quiz?from=blood-test");
+            } else {
+              setState("done");
+            }
           }, 2500);
           return 100;
         }

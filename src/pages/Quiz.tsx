@@ -54,12 +54,14 @@ const Quiz = () => {
     answers.diet !== "" &&
     answers.takesSupplements !== "";
 
+  const fromBloodTest = new URLSearchParams(window.location.search).get("from") === "blood-test";
+
   const handleSubmit = () => {
     if (!canSubmit) return;
     setShowAnalyzing(true);
     setTimeout(() => {
       setIsComplete(true);
-      navigate("/recommendation");
+      navigate(fromBloodTest ? "/blood-test" : "/recommendation");
     }, 2500);
   };
 
