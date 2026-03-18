@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, Activity, Upload, Shield, FlaskConical, Users, TrendingUp, Brain, Heart, Zap } from "lucide-react";
+import { ArrowRight, Activity, Upload, Shield, FlaskConical, Users, TrendingUp, Brain, Heart, Zap, CalendarCheck } from "lucide-react";
 import { SecurityFooter, TrustBadges } from "@/components/TrustBadges";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import BookBloodTestModal from "@/components/BookBloodTestModal";
 import dashboardPreview from "@/assets/dashboard-preview.jpg";
 import bloodTestHero from "@/assets/blood-test-hero.jpg";
 
 const Index = () => {
   const navigate = useNavigate();
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -33,11 +36,14 @@ const Index = () => {
                   <Upload className="mr-2 h-5 w-5" />
                   Upload Blood Test
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6 rounded-xl font-medium" onClick={() => navigate("/dashboard")}>
-                  <Activity className="mr-2 h-5 w-5" />
-                  View Dashboard
+                <Button size="lg" className="text-base px-8 py-6 rounded-xl font-medium bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setBookingOpen(true)} title="Schedule and pay for a blood test with our trusted lab partners. We handle everything.">
+                  <CalendarCheck className="mr-2 h-5 w-5" />
+                  Book a Blood Test
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground mt-4 max-w-lg">
+                Already have results? Upload them. Don't have one? Book a blood test with our trusted labs — we handle scheduling, payment, and delivery.
+              </p>
               <div className="flex items-center gap-6 mt-8 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5"><Shield className="h-4 w-4 text-accent" /> HIPAA Compliant</span>
                 <span className="flex items-center gap-1.5"><FlaskConical className="h-4 w-4 text-accent" /> Evidence-Based</span>
@@ -167,6 +173,8 @@ const Index = () => {
 
       {/* Security Footer */}
       <SecurityFooter />
+
+      <BookBloodTestModal open={bookingOpen} onOpenChange={setBookingOpen} />
     </div>
   );
 };
