@@ -97,7 +97,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { step: "01", title: "Share Your Data", desc: "Upload a blood test or connect your wearable — we handle the rest.", icon: Upload },
+              { step: "01", title: "Upload Your Blood Test", desc: "Upload your blood test results — we extract and analyze your biomarkers instantly.", icon: Upload },
               { step: "02", title: "Discover What You Need", desc: "See exactly which nutrients your body is missing and why it matters for your performance.", icon: Brain },
               { step: "03", title: "Feel the Difference", desc: "Get a science-backed supplement plan tailored to your body — train harder, recover faster, think clearer.", icon: Zap },
             ].map((item, i) => (
