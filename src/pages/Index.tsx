@@ -146,9 +146,9 @@ const Index = () => {
       {/* Wearable Integrations */}
       <section className="section-padding">
         <div className="container text-center">
-          <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-4 tracking-tight">Connect Your Wearables</h2>
+          <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-4 tracking-tight">Train Harder. Recover Faster. Perform at Your Best.</h2>
           <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-12">
-            Sync data from your favorite health devices for a complete optimization picture.
+            Connect your wearable to unlock recovery, sleep, and training insights that shape your supplement protocol.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-3xl mx-auto">
             {["Apple Health", "WHOOP", "Oura Ring", "Garmin", "Strava"].map((name, i) => (
