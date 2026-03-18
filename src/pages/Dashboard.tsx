@@ -70,10 +70,16 @@ const Dashboard = () => {
               <h1 className="font-heading text-3xl md:text-4xl text-foreground font-bold tracking-tight mb-1">Your Health Strategy</h1>
               <p className="text-muted-foreground">See what your body needs to perform, recover, and feel its best.</p>
             </div>
-            <Button className="mt-4 md:mt-0 rounded-xl" onClick={() => navigate("/blood-test")}>
-              <Upload className="h-4 w-4 mr-2" />
-              Upload New Test
-            </Button>
+            <div className="flex gap-2 mt-4 md:mt-0">
+              <Button className="rounded-xl" onClick={() => navigate("/blood-test")}>
+                <Upload className="h-4 w-4 mr-2" />
+                Upload Test
+              </Button>
+              <Button className="rounded-xl bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setBookingOpen(true)} title="Schedule and pay for a blood test with our trusted lab partners. We handle everything.">
+                <CalendarCheck className="h-4 w-4 mr-2" />
+                Book a Test
+              </Button>
+            </div>
           </div>
 
           {/* Score + Summary Cards */}
