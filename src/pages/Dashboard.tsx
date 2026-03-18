@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
+import BookBloodTestModal from "@/components/BookBloodTestModal";
 import {
   Activity, TrendingUp, TrendingDown, Minus, ArrowRight, ShoppingCart,
-  AlertCircle, CheckCircle2, Upload, Heart, Brain, Shield, Zap, Moon,
+  AlertCircle, CheckCircle2, Upload, Heart, Brain, Shield, Zap, Moon, CalendarCheck,
 } from "lucide-react";
 import { SecurityFooter } from "@/components/TrustBadges";
 
