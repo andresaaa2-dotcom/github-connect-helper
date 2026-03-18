@@ -42,6 +42,7 @@ const App = () => (
             </Routes>
           </BrowserRouter>
         </CartProvider>
+        </BloodTestProvider>
       </QuizProvider>
     </TooltipProvider>
   </QueryClientProvider>
