@@ -10,7 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import Navbar from "@/components/Navbar";
 import {
   Upload, FileText, CheckCircle2, AlertCircle, ArrowRight,
-  Zap, Activity, X, Loader2,
+  Zap, Activity, X, Loader2, ClipboardList, Check,
 } from "lucide-react";
 import { TrustBadges } from "@/components/TrustBadges";
 
