@@ -20,8 +20,9 @@ const BloodTest = () => {
   const navigate = useNavigate();
   const { setHasUploadedBloodTest } = useBloodTest();
   const { answers, isComplete: quizComplete } = useQuiz();
-  const [state, setState] = useState<UploadState>("idle");
-  const [fileName, setFileName] = useState("");
+  const initialState: UploadState = hasUploadedBloodTest && quizComplete ? "done" : "idle";
+  const [state, setState] = useState<UploadState>(initialState);
+  const [fileName, setFileName] = useState(hasUploadedBloodTest ? "sample-blood-test.pdf" : "");
   const [progress, setProgress] = useState(0);
 
   const simulateUpload = useCallback((name: string) => {
