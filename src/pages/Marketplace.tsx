@@ -109,8 +109,8 @@ const Marketplace = () => {
                 isBiomarkerLinked={biomarkerLinkedIds.includes(supp.id)}
                 isExpanded={expandedProduct === supp.id}
                 onToggle={() => setExpandedProduct(expandedProduct === supp.id ? null : supp.id)}
-                onAdd={() => addItem(supp.id)}
-                inCart={items.some((item) => item.id === supp.id)}
+                onAdd={() => addToCart(supp.id, "one-time")}
+                inCart={items.some((item) => item.supplementId === supp.id)}
               />
             ))}
           </div>
