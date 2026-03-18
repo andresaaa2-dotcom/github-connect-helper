@@ -36,11 +36,14 @@ const Index = () => {
                   <Upload className="mr-2 h-5 w-5" />
                   Upload Blood Test
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-8 py-6 rounded-xl font-medium" onClick={() => navigate("/dashboard")}>
-                  <Activity className="mr-2 h-5 w-5" />
-                  View Dashboard
+                <Button size="lg" className="text-base px-8 py-6 rounded-xl font-medium bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setBookingOpen(true)} title="Schedule and pay for a blood test with our trusted lab partners. We handle everything.">
+                  <CalendarCheck className="mr-2 h-5 w-5" />
+                  Book a Blood Test
                 </Button>
               </div>
+              <p className="text-sm text-muted-foreground mt-4 max-w-lg">
+                Already have results? Upload them. Don't have one? Book a blood test with our trusted labs — we handle scheduling, payment, and delivery.
+              </p>
               <div className="flex items-center gap-6 mt-8 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5"><Shield className="h-4 w-4 text-accent" /> HIPAA Compliant</span>
                 <span className="flex items-center gap-1.5"><FlaskConical className="h-4 w-4 text-accent" /> Evidence-Based</span>
