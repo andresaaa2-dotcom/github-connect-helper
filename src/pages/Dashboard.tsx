@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { mockBiomarkers, mockWearableData, biomarkerCategories, type BiomarkerStatus } from "@/data/biomarkers";
+import { mockBiomarkers, biomarkerCategories, type BiomarkerStatus } from "@/data/biomarkers";
 import { supplements } from "@/data/supplements";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
