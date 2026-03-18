@@ -26,7 +26,7 @@ const Index = () => {
                 Stop guessing your supplements. Start using your data.
               </h1>
               <p className="text-lg text-muted-foreground mb-10 max-w-lg leading-relaxed">
-                Turn your blood tests and wearable data into a personalized health strategy — so you feel better, perform better, and make smarter decisions about your body.
+                Turn your blood test data into a personalized health strategy — so you feel better, perform better, and make smarter decisions about your body.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="text-base px-8 py-6 rounded-xl font-medium" onClick={() => navigate("/blood-test")}>
