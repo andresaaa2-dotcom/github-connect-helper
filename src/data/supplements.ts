@@ -1,4 +1,4 @@
-import { Sun, Droplets, Fish, Pill, Shield, Sparkles, Zap, Dumbbell, Heart, Leaf, Brain, Eye, Moon, Flame, Apple, Beaker } from "lucide-react";
+import { Sun, Droplets, Fish, Pill, Shield, Sparkles, Zap, Dumbbell, Heart, Leaf, Brain, Eye, Moon, Flame, Apple, FlaskConical } from "lucide-react";
 
 export interface Supplement {
   id: string;
