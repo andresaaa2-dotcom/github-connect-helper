@@ -93,7 +93,7 @@ const Index = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-4 tracking-tight">How It Works</h2>
-            <p className="text-muted-foreground text-lg max-w-lg mx-auto">From raw data to actionable supplement recommendations in minutes.</p>
+            <p className="text-muted-foreground text-lg max-w-lg mx-auto">From blood test to personalized health strategy in minutes — no more guesswork.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
