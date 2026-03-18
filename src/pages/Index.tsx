@@ -120,10 +120,10 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-heading text-3xl md:text-4xl text-foreground font-bold mb-6 tracking-tight">
-                Your blood tells the story.
+                Use your data to stay healthy, not just treat problems.
               </h2>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                Upload your blood test results and instantly see which biomarkers need attention. Our system maps deficiencies to specific supplements with dosage guidance.
+                Detect nutrient deficiencies early, optimize your metabolic health, and build a supplement protocol that keeps you ahead — not catching up.
               </p>
               <ul className="space-y-3 mb-8">
                 {["Vitamin D, B12, Iron, Ferritin", "Testosterone, Cortisol, Thyroid", "Cholesterol, Omega-3 Index", "Fasting Glucose, HbA1c"].map(item => (
