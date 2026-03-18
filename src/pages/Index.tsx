@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, Activity, Upload, Shield, FlaskConical, Users, TrendingUp, Brain, Heart, Zap } from "lucide-react";
+import { ArrowRight, Activity, Upload, Shield, FlaskConical, Users, TrendingUp, Brain, Heart, Zap, CalendarCheck } from "lucide-react";
 import { SecurityFooter, TrustBadges } from "@/components/TrustBadges";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import BookBloodTestModal from "@/components/BookBloodTestModal";
 import dashboardPreview from "@/assets/dashboard-preview.jpg";
 import bloodTestHero from "@/assets/blood-test-hero.jpg";
 
 const Index = () => {
   const navigate = useNavigate();
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
