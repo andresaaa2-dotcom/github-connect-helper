@@ -10,6 +10,7 @@ import {
   Upload, FileText, CheckCircle2, AlertCircle, ArrowRight,
   Zap, Activity, X, Loader2,
 } from "lucide-react";
+import { TrustBadges } from "@/components/TrustBadges";
 
 type UploadState = "idle" | "uploading" | "analyzing" | "done";
 
