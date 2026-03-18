@@ -166,10 +166,10 @@ const Index = () => {
       <section className="section-padding bg-foreground">
         <div className="container text-center">
           <h2 className="font-heading text-3xl md:text-4xl text-primary-foreground font-bold mb-4 tracking-tight">
-            Start optimizing today.
+            Cut through the supplement noise with science.
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-md mx-auto mb-8">
-            Take the health quiz or upload your blood test to get personalized recommendations.
+            Know exactly what your body needs, what you can skip, and how much to take — backed by your own biology.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" className="rounded-xl text-base px-8 py-6" onClick={() => navigate("/quiz")}>
