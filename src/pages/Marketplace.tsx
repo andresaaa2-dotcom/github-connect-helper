@@ -153,7 +153,7 @@ const ProductCard = ({
             <h3 className="font-heading font-semibold text-foreground">{supplement.name}</h3>
             {isBiomarkerLinked && (
               <Badge className="bg-primary/10 text-primary border-primary/20 text-xs border">
-                <Beaker className="h-3 w-3 mr-1" />
+                <FlaskConical className="h-3 w-3 mr-1" />
                 Biomarker Match
               </Badge>
             )}
