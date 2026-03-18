@@ -17,6 +17,7 @@ type UploadState = "idle" | "uploading" | "analyzing" | "done";
 
 const BloodTest = () => {
   const navigate = useNavigate();
+  const { setHasUploadedBloodTest } = useBloodTest();
   const [state, setState] = useState<UploadState>("idle");
   const [fileName, setFileName] = useState("");
   const [progress, setProgress] = useState(0);
