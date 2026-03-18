@@ -184,6 +184,7 @@ const BloodTest = () => {
                 </div>
               )}
             </div>
+          )}
 
           {state === "uploading" && (
             <div className="wellness-card p-12 text-center animate-fade-in">
