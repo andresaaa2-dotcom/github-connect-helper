@@ -88,7 +88,7 @@ const BloodTest = () => {
           </div>
 
           {state === "idle" && (
-            <div
+            <>
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleDrop}
               className="wellness-card p-12 text-center border-2 border-dashed border-border hover:border-primary/50 transition-colors cursor-pointer animate-fade-in"
